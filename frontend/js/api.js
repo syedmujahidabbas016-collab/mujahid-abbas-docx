@@ -3,7 +3,7 @@
 // ==========================================
 
 const API_CONFIG = {
-    BASE_URL: "http://localhost:5000/api",
+    BASE_URL: "https://mujahid-abbas-docx.onrender.com/api",
     REQUEST_TIMEOUT: 30000,
     UPLOAD_TIMEOUT: 120000
 };
