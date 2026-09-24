@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="MUJAHID ABBAS DOCX - Secure personal cloud document storage">
+
+    <title>My Documents - MUJAHID ABBAS DOCX</title>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Documents CSS -->
+    <link rel="stylesheet" href="css/documents.css">
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-ring"></div>
+        <div class="loader-text">MUJAHID ABBAS DOCX</div>
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- APP HEADER -->
+    <!-- ============================= -->
+
+    <header class="app-header">
+
+        <div class="header-left">
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" type="button">
+                ☰
+            </button>
+
+            <a href="documents.html" class="brand-mini">
+                <span class="brand-mini-logo">MA</span>
+
+                <span class="brand-mini-text">
+                    <strong>MUJAHID ABBAS</strong>
+                    <small>DOCX</small>
+                </span>
+            </a>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <button class="header-icon-btn" id="notificationBtn" type="button"
+                title="Notifications">
+                🔔
+            </button>
+
+            <a href="profile.html" class="user-mini">
+
+                <span class="user-avatar" id="headerAvatar">
+                    MA
+                </span>
+
+                <span class="user-mini-info">
+                    <strong id="headerUserName">
+                        User
+                    </strong>
+
+                    <small id="headerUserEmail">
+                        user@email.com
+                    </small>
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- APP LAYOUT -->
+    <!-- ============================= -->
+
+    <div class="app-layout">
+
+
+        <!-- ============================= -->
+        <!-- SIDEBAR -->
+        <!-- ============================= -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-inner">
+
+
+                <!-- Navigation -->
+
+                <nav class="main-navigation">
+
+                    <p class="nav-section-title">
+                        WORKSPACE
+                    </p>
+
+
+                    <a href="documents.html"
+                       class="nav-link active">
+
+                        <span class="nav-icon">📁</span>
+
+                        <span>
+                            My Documents
+                        </span>
+
+                    </a>
+
+
+                    <a href="documents.html?filter=recent"
+                       class="nav-link">
+
+                        <span class="nav-icon">🕒</span>
+
+                        <span>
+                            Recent
+                        </span>
+
+                    </a>
+
+
+                    <a href="documents.html?filter=images"
+                       class="nav-link">
+
+                        <span class="nav-icon">🖼️</span>
+
+                        <span>
+                            Images
+                        </span>
+
+                    </a>
+
+
+                    <a href="documents.html?filter=pdf"
+                       class="nav-link">
+
+                        <span class="nav-icon">📄</span>
+
+                        <span>
+                            PDF Documents
+                        </span>
+
+                    </a>
+
+
+                    <a href="documents.html?filter=docx"
+                       class="nav-link">
+
+                        <span class="nav-icon">📝</span>
+
+                        <span>
+                            Word Documents
+                        </span>
+
+                    </a>
+
+
+                    <p class="nav-section-title nav-section-spaced">
+                        ACCOUNT
+                    </p>
+
+
+                    <a href="profile.html"
+                       class="nav-link">
+
+                        <span class="nav-icon">👤</span>
+
+                        <span>
+                            Profile
+                        </span>
+
+                    </a>
+
+
+                    <button class="nav-link nav-button"
+                            id="sidebarLogoutBtn"
+                            type="button">
+
+                        <span class="nav-icon">↪</span>
+
+                        <span>
+                            Logout
+                        </span>
+
+                    </button>
+
+                </nav>
+
+
+                <!-- Storage Card -->
+
+                <div class="storage-card">
+
+                    <div class="storage-card-top">
+
+                        <div>
+                            <span class="storage-label">
+                                CLOUD STORAGE
+                            </span>
+
+                            <strong id="storageUsedText">
+                                0 GB
+                            </strong>
+
+                            <small id="storageTotalText">
+                                of 64 GB
+                            </small>
+                        </div>
+
+                        <span class="storage-icon">
+                            ☁
+                        </span>
+
+                    </div>
+
+
+                    <div class="storage-progress">
+
+                        <div class="storage-progress-bar"
+                             id="storageProgressBar"
+                             style="width: 0%;">
+                        </div>
+
+                    </div>
+
+
+                    <p class="storage-message"
+                       id="storageMessage">
+                        Your storage is ready.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ============================= -->
+        <!-- MAIN CONTENT -->
+        <!-- ============================= -->
+
+        <main class="main-content">
+
+
+            <!-- Mobile overlay -->
+
+            <div class="sidebar-overlay"
+                 id="sidebarOverlay">
+            </div>
+
+
+            <!-- Page heading -->
+
+            <section class="page-heading">
+
+                <div>
+
+                    <span class="page-eyebrow">
+                        PERSONAL CLOUD
+                    </span>
+
+                    <h1>
+                        My Documents
+                    </h1>
+
+                    <p>
+                        Securely store, organize and access your files anywhere.
+                    </p>
+
+                </div>
+
+
+                <button class="primary-action-btn"
+                        id="uploadBtn"
+                        type="button">
+
+                    <span>＋</span>
+
+                    <span>
+                        Upload Files
+                    </span>
+
+                </button>
+
+            </section>
+
+
+
+            <!-- ============================= -->
+            <!-- STORAGE SUMMARY -->
+            <!-- ============================= -->
+
+            <section class="dashboard-summary">
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        📁
+                    </div>
+
+                    <div>
+
+                        <span class="summary-label">
+                            TOTAL FILES
+                        </span>
+
+                        <strong id="totalFiles">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        💾
+                    </div>
+
+                    <div>
+
+                        <span class="summary-label">
+                            STORAGE USED
+                        </span>
+
+                        <strong id="summaryStorageUsed">
+                            0 GB
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        ☁
+                    </div>
+
+                    <div>
+
+                        <span class="summary-label">
+                            AVAILABLE
+                        </span>
+
+                        <strong id="summaryStorageAvailable">
+                            64 GB
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ============================= -->
+            <!-- UPLOAD AREA -->
+            <!-- ============================= -->
+
+            <section class="upload-area"
+                     id="uploadArea">
+
+                <div class="upload-area-icon">
+                    ☁
+                </div>
+
+                <div class="upload-area-content">
+
+                    <h2>
+                        Upload your documents
+                    </h2>
+
+                    <p>
+                        Drag & drop files here or choose files from your device.
+                    </p>
+
+                    <small>
+                        PDF, DOC, DOCX, JPG, JPEG, PNG and more
+                    </small>
+
+                </div>
+
+
+                <button class="secondary-action-btn"
+                        id="chooseFilesBtn"
+                        type="button">
+
+                    Choose Files
+
+                </button>
+
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    multiple
+                    hidden
+                >
+
+            </section>
+
+
+
+            <!-- ============================= -->
+            <!-- DOCUMENT TOOLBAR -->
+            <!-- ============================= -->
+
+            <section class="documents-toolbar">
+
+
+                <div class="toolbar-left">
+
+                    <div class="search-box">
+
+                        <span class="search-icon">
+                            🔍
+                        </span>
+
+                        <input
+                            type="search"
+                            id="documentSearch"
+                            placeholder="Search documents..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="toolbar-right">
+
+
+                    <div class="filter-wrapper">
+
+                        <select id="documentFilter"
+                                class="document-filter">
+
+                            <option value="all">
+                                All Files
+                            </option>
+
+                            <option value="pdf">
+                                PDF
+                            </option>
+
+                            <option value="doc">
+                                Word
+                            </option>
+
+                            <option value="image">
+                                Images
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="view-switcher">
+
+                        <button
+                            type="button"
+                            class="view-btn active"
+                            id="gridViewBtn"
+                            title="Grid View">
+
+                            ▦
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="view-btn"
+                            id="listViewBtn"
+                            title="List View">
+
+                            ☰
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ============================= -->
+            <!-- DOCUMENTS SECTION -->
+            <!-- ============================= -->
+
+            <section class="documents-section">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Your Files
+                        </h2>
+
+                        <span id="documentCountText">
+                            0 files
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="refresh-btn"
+                        id="refreshDocumentsBtn"
+                        type="button"
+                        title="Refresh">
+
+                        ↻
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Loading -->
+
+                <div class="documents-loading"
+                     id="documentsLoading">
+
+                    <div class="document-loader"></div>
+
+                    <p>
+                        Loading your documents...
+                    </p>
+
+                </div>
+
+
+
+                <!-- Empty State -->
+
+                <div class="empty-documents"
+                     id="emptyDocuments"
+                     hidden>
+
+                    <div class="empty-icon">
+                        📂
+                    </div>
+
+                    <h3>
+                        No documents yet
+                    </h3>
+
+                    <p>
+                        Your uploaded files will appear here.
+                    </p>
+
+                    <button
+                        class="secondary-action-btn"
+                        id="emptyUploadBtn"
+                        type="button">
+
+                        Upload Your First File
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Documents Grid -->
+
+                <div
+                    class="documents-grid"
+                    id="documentsGrid">
+
+                </div>
+
+
+
+                <!-- Documents List -->
+
+                <div
+                    class="documents-list"
+                    id="documentsList"
+                    hidden>
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ============================= -->
+    <!-- UPLOAD MODAL -->
+    <!-- ============================= -->
+
+    <div class="modal-backdrop"
+         id="uploadModal"
+         hidden>
+
+        <div class="modal-card upload-modal-card">
+
+
+            <button
+                class="modal-close"
+                id="closeUploadModal"
+                type="button">
+
+                ×
+
+            </button>
+
+
+            <div class="modal-icon">
+                ☁
+            </div>
+
+
+            <h2>
+                Upload Files
+            </h2>
+
+
+            <p>
+                Select documents from your device to upload securely.
+            </p>
+
+
+            <div class="modal-upload-box"
+                 id="modalUploadBox">
+
+                <span class="modal-upload-icon">
+                    📤
+                </span>
+
+                <strong>
+                    Drop files here
+                </strong>
+
+                <span>
+                    or click to browse
+                </span>
+
+                <input
+                    type="file"
+                    id="modalFileInput"
+                    multiple
+                    hidden
+                >
+
+            </div>
+
+
+            <div
+                class="selected-files"
+                id="selectedFiles">
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="modal-cancel-btn"
+                    id="cancelUploadBtn"
+                    type="button">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    class="primary-action-btn"
+                    id="startUploadBtn"
+                    type="button">
+
+                    Upload Files
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ============================= -->
+    <!-- FILE PREVIEW MODAL -->
+    <!-- ============================= -->
+
+    <div class="modal-backdrop"
+         id="previewModal"
+         hidden>
+
+        <div class="modal-card preview-modal-card">
+
+
+            <button
+                class="modal-close"
+                id="closePreviewModal"
+                type="button">
+
+                ×
+
+            </button>
+
+
+            <div class="preview-header">
+
+                <div>
+
+                    <span class="page-eyebrow">
+                        DOCUMENT PREVIEW
+                    </span>
+
+                    <h2 id="previewFileName">
+                        File Preview
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="preview-content"
+                 id="previewContent">
+
+                <div class="preview-placeholder">
+
+                    <span>
+                        📄
+                    </span>
+
+                    <p>
+                        Preview will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="preview-actions">
+
+                <button
+                    class="secondary-action-btn"
+                    id="previewDownloadBtn"
+                    type="button">
+
+                    Download
+
+                </button>
+
+                <button
+                    class="danger-action-btn"
+                    id="previewDeleteBtn"
+                    type="button">
+
+                    Delete
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ============================= -->
+    <!-- DELETE CONFIRMATION MODAL -->
+    <!-- ============================= -->
+
+    <div class="modal-backdrop"
+         id="deleteModal"
+         hidden>
+
+        <div class="modal-card small-modal">
+
+
+            <div class="danger-modal-icon">
+                !
+            </div>
+
+
+            <h2>
+                Delete Document?
+            </h2>
+
+
+            <p>
+                Are you sure you want to permanently delete
+                <strong id="deleteFileName">
+                    this file
+                </strong>?
+            </p>
+
+
+            <p class="warning-text">
+                This action cannot be undone.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="modal-cancel-btn"
+                    id="cancelDeleteBtn"
+                    type="button">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    class="danger-action-btn"
+                    id="confirmDeleteBtn"
+                    type="button">
+
+                    Delete Permanently
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ============================= -->
+    <!-- TOAST -->
+    <!-- ============================= -->
+
+    <div
+        class="toast-container"
+        id="toastContainer">
+
+    </div>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="js/api.js"></script>
+    <script src="js/documents.js"></script>
+
+</body>
+</html>

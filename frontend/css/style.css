@@ -1,0 +1,521 @@
+/* =========================================================
+   MUJAHID ABBAS DOCX
+   GLOBAL STYLES
+   ========================================================= */
+
+:root {
+    --bg-main: #07111f;
+    --bg-secondary: #0b1728;
+    --bg-card: rgba(15, 29, 49, 0.88);
+    --bg-card-solid: #0f1d31;
+
+    --text-primary: #f5f7fb;
+    --text-secondary: #aebbd0;
+    --text-muted: #71819a;
+
+    --primary: #4f8cff;
+    --primary-light: #78a9ff;
+    --primary-dark: #2563eb;
+
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+
+    --border: rgba(255, 255, 255, 0.09);
+    --border-light: rgba(255, 255, 255, 0.14);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+
+    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 12px 35px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+    --transition: 0.25s ease;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    color: var(--text-primary);
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(79, 140, 255, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(37, 99, 235, 0.10),
+            transparent 30%
+        ),
+        var(--bg-main);
+
+    overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background: rgba(79, 140, 255, 0.35);
+    color: #ffffff;
+}
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   PAGE LOADER
+   ========================================================= */
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(79, 140, 255, 0.12),
+            transparent 35%
+        ),
+        #07111f;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+/* IMPORTANT:
+   JavaScript adds "hidden" after page loads.
+*/
+
+.page-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-ring {
+    width: 52px;
+    height: 52px;
+
+    border: 3px solid rgba(255, 255, 255, 0.12);
+    border-top-color: var(--primary);
+
+    border-radius: 50%;
+
+    animation: loaderSpin 0.9s linear infinite;
+
+    box-shadow:
+        0 0 25px rgba(79, 140, 255, 0.18);
+}
+
+.loader-text {
+    margin-top: 18px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: var(--text-secondary);
+
+    text-align: center;
+}
+
+@keyframes loaderSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #081321;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #243653;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #355078;
+}
+
+/* =========================================================
+   COMMON UTILITY CLASSES
+   ========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.no-select {
+    user-select: none;
+}
+
+/* =========================================================
+   COMMON CARD
+   ========================================================= */
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   COMMON BUTTON
+   ========================================================= */
+
+.btn {
+    border: 0;
+    border-radius: var(--radius-md);
+
+    min-height: 44px;
+    padding: 0 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    font-weight: 700;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    box-shadow:
+        0 8px 24px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:hover {
+    box-shadow:
+        0 12px 30px rgba(37, 99, 235, 0.35);
+}
+
+.btn-secondary {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   COMMON INPUT
+   ========================================================= */
+
+input,
+select,
+textarea {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    transition:
+        border-color var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: rgba(79, 140, 255, 0.75);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    box-shadow:
+        0 0 0 3px rgba(79, 140, 255, 0.10);
+
+    outline: none;
+}
+
+/* =========================================================
+   COMMON BADGE
+   ========================================================= */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   COMMON STATUS
+   ========================================================= */
+
+.status-success {
+    color: #86efac;
+    background: rgba(34, 197, 94, 0.10);
+}
+
+.status-danger {
+    color: #fca5a5;
+    background: rgba(239, 68, 68, 0.10);
+}
+
+.status-warning {
+    color: #fcd34d;
+    background: rgba(245, 158, 11, 0.10);
+}
+
+/* =========================================================
+   COMMON OVERLAY
+   ========================================================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9990;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(4px);
+}
+
+/* =========================================================
+   COMMON MODAL BASE
+   ========================================================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9995;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.60);
+    backdrop-filter: blur(6px);
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    width: min(100%, 560px);
+    max-height: calc(100vh - 40px);
+
+    overflow-y: auto;
+
+    background: var(--bg-card-solid);
+
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+
+    box-shadow: var(--shadow-lg);
+
+    animation: modalEnter 0.25s ease;
+}
+
+@keyframes modalEnter {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE FOUNDATION
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-loader {
+        padding: 20px;
+    }
+
+    .loader-ring {
+        width: 46px;
+        height: 46px;
+    }
+
+    .loader-text {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .btn {
+        min-height: 46px;
+    }
+
+    .modal {
+        padding: 14px;
+    }
+
+    .modal-content {
+        max-height: calc(100vh - 28px);
+        border-radius: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loader-ring {
+        width: 42px;
+        height: 42px;
+    }
+
+    .loader-text {
+        margin-top: 14px;
+        font-size: 11px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

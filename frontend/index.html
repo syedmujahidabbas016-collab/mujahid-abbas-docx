@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="MUJAHID ABBAS DOCX - Secure personal cloud document storage"
+    >
+
+    <title>MUJAHID ABBAS DOCX</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body class="auth-page">
+
+    <!-- ==========================================
+         PAGE LOADER
+    =========================================== -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-ring"></div>
+        <div class="loader-text">
+            MUJAHID ABBAS DOCX
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+         AUTH PAGE
+    =========================================== -->
+    <main class="auth-shell">
+
+        <!-- ======================================
+             BRANDING
+        ======================================= -->
+        <section class="auth-branding">
+
+            <div class="brand-content">
+
+                <div class="brand-logo">
+                    <div class="logo-icon">
+                        M
+                    </div>
+
+                    <div class="logo-text">
+                        MUJAHID ABBAS DOCX
+                    </div>
+                </div>
+
+                <h1>
+                    Your documents.
+                    <span>Your cloud.</span>
+                </h1>
+
+                <p>
+                    Securely store, access and manage
+                    your college and personal documents
+                    from anywhere.
+                </p>
+
+                <div class="security-badge">
+                    <span class="security-dot"></span>
+                    Secure Cloud Storage
+                </div>
+
+                <div class="brand-features">
+
+                    <div class="brand-feature">
+                        <span>✓</span>
+                        Private document storage
+                    </div>
+
+                    <div class="brand-feature">
+                        <span>✓</span>
+                        Email verification
+                    </div>
+
+                    <div class="brand-feature">
+                        <span>✓</span>
+                        Secure account access
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             AUTH CARD
+        ======================================= -->
+        <section class="auth-panel">
+
+            <div class="auth-card">
+
+
+                <!-- ==================================
+                     LOGIN
+                =================================== -->
+                <div
+                    id="loginContainer"
+                    class="auth-section active"
+                >
+
+                    <div class="auth-header">
+                        <h2>Welcome back</h2>
+
+                        <p>
+                            Sign in to access your documents.
+                        </p>
+                    </div>
+
+
+                    <form id="loginForm">
+
+                        <!-- EMAIL -->
+                        <div class="form-group">
+
+                            <label for="loginEmail">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="email"
+                                    id="loginEmail"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+                        <div class="form-group">
+
+                            <label for="loginPassword">
+                                Password
+                            </label>
+
+                            <div class="input-wrapper password-field">
+
+                                <input
+                                    type="password"
+                                    id="loginPassword"
+                                    name="password"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="loginPassword"
+                                    aria-label="Show password"
+                                >
+                                    👁
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- OPTIONS -->
+                        <div class="form-options">
+
+                            <label class="checkbox-option">
+
+                                <input
+                                    type="checkbox"
+                                    id="rememberMe"
+                                >
+
+                                <span>
+                                    Remember me
+                                </span>
+
+                            </label>
+
+
+                            <a
+                                href="#"
+                                id="showForgotPassword"
+                                class="auth-link"
+                            >
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+                        <!-- LOGIN BUTTON -->
+                        <button
+                            type="submit"
+                            class="auth-button"
+                            id="loginButton"
+                        >
+                            Sign In
+                        </button>
+
+                    </form>
+
+
+                    <!-- SWITCH TO REGISTER -->
+                    <div class="auth-switch">
+
+                        <span>
+                            Don't have an account?
+                        </span>
+
+                        <a
+                            href="#"
+                            id="showRegister"
+                            class="auth-link"
+                        >
+                            Create Account
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     REGISTER
+                =================================== -->
+                <div
+                    id="registerContainer"
+                    class="auth-section"
+                    style="display: none;"
+                >
+
+                    <div class="auth-header">
+
+                        <h2>Create your account</h2>
+
+                        <p>
+                            Start your secure document storage.
+                        </p>
+
+                    </div>
+
+
+                    <form id="registerForm">
+
+                        <!-- FULL NAME -->
+                        <div class="form-group">
+
+                            <label for="registerFullName">
+                                Full Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="text"
+                                    id="registerFullName"
+                                    name="fullName"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="form-group">
+
+                            <label for="registerEmail">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="email"
+                                    id="registerEmail"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+                        <div class="form-group">
+
+                            <label for="registerPassword">
+                                Password
+                            </label>
+
+                            <div class="input-wrapper password-field">
+
+                                <input
+                                    type="password"
+                                    id="registerPassword"
+                                    name="password"
+                                    placeholder="Create a strong password"
+                                    autocomplete="new-password"
+                                    minlength="8"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="registerPassword"
+                                    aria-label="Show password"
+                                >
+                                    👁
+                                </button>
+
+                            </div>
+
+                            <div class="password-strength">
+
+                                <div class="password-strength-track">
+                                    <div
+                                        id="passwordStrengthBar"
+                                        class="password-strength-bar"
+                                    ></div>
+                                </div>
+
+                                <span
+                                    id="passwordStrengthText"
+                                ></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CONFIRM PASSWORD -->
+                        <div class="form-group">
+
+                            <label for="registerConfirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="input-wrapper password-field">
+
+                                <input
+                                    type="password"
+                                    id="registerConfirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Confirm your password"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="registerConfirmPassword"
+                                    aria-label="Show password"
+                                >
+                                    👁
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CREATE ACCOUNT -->
+                        <button
+                            type="submit"
+                            class="auth-button"
+                            id="registerButton"
+                        >
+                            Create Account
+                        </button>
+
+                    </form>
+
+
+                    <!-- SWITCH TO LOGIN -->
+                    <div class="auth-switch">
+
+                        <span>
+                            Already have an account?
+                        </span>
+
+                        <a
+                            href="#"
+                            id="showLogin"
+                            class="auth-link"
+                        >
+                            Sign In
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     OTP
+                =================================== -->
+                <div
+                    id="otpContainer"
+                    class="auth-section"
+                    style="display: none;"
+                >
+
+                    <div class="auth-header">
+
+                        <h2>Verify your email</h2>
+
+                        <p>
+                            Enter the 6-digit verification code
+                            sent to
+                            <strong id="otpEmail">
+                                your email
+                            </strong>
+                        </p>
+
+                    </div>
+
+
+                    <form id="otpForm">
+
+                        <div class="otp-input-container">
+
+                            <input
+                                type="text"
+                                class="otp-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                                autocomplete="one-time-code"
+                            >
+
+                            <input
+                                type="text"
+                                class="otp-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                            >
+
+                            <input
+                                type="text"
+                                class="otp-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                            >
+
+                            <input
+                                type="text"
+                                class="otp-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                            >
+
+                            <input
+                                type="text"
+                                class="otp-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                            >
+
+                            <input
+                                type="text"
+                                class="otp-input"
+                                maxlength="1"
+                                inputmode="numeric"
+                            >
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="auth-button"
+                            id="verifyOtpButton"
+                        >
+                            Verify Email
+                        </button>
+
+                    </form>
+
+
+                    <div class="otp-resend">
+
+                        <span id="otpCountdown">
+                            Resend in 60s
+                        </span>
+
+                        <button
+                            type="button"
+                            id="resendOtpBtn"
+                            class="auth-link-button"
+                            disabled
+                        >
+                            Resend Code
+                        </button>
+
+                    </div>
+
+
+                    <div class="auth-switch">
+
+                        <a
+                            href="#"
+                            id="backToLogin"
+                            class="auth-link"
+                        >
+                            Back to Sign In
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     FORGOT PASSWORD
+                =================================== -->
+                <div
+                    id="forgotContainer"
+                    class="auth-section"
+                    style="display: none;"
+                >
+
+                    <div class="auth-header">
+
+                        <h2>Forgot password?</h2>
+
+                        <p>
+                            Enter your email and we'll send
+                            password reset instructions.
+                        </p>
+
+                    </div>
+
+
+                    <form id="forgotPasswordForm">
+
+                        <div class="form-group">
+
+                            <label for="forgotEmail">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="email"
+                                    id="forgotEmail"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="auth-button"
+                            id="forgotPasswordButton"
+                        >
+                            Send Reset Link
+                        </button>
+
+                    </form>
+
+
+                    <div class="auth-switch">
+
+                        <a
+                            href="#"
+                            id="backToLogin"
+                            class="auth-link"
+                        >
+                            Back to Sign In
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+    <footer class="auth-footer">
+
+        <p>
+            © 2026 MUJAHID ABBAS DOCX.
+            Secure personal cloud storage.
+        </p>
+
+    </footer>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+
+
+    <!-- ==========================================
+         LOADER SCRIPT
+    =========================================== -->
+
+    <script>
+        window.addEventListener("load", function () {
+
+            const loader =
+                document.getElementById("pageLoader");
+
+            if (loader) {
+
+                setTimeout(function () {
+
+                    loader.classList.add("hidden");
+
+                }, 300);
+            }
+
+        });
+    </script>
+
+</body>
+</html>
